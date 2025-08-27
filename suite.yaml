@@ -1,0 +1,54 @@
+cases:
+  - name: visa_4111_valido
+    stdin: |
+      4111111111111111
+    expected_stdout: |
+      Cartão válido
+
+  - name: visa_4012888888881881_valido
+    stdin: |
+      4012888888881881
+    expected_stdout: |
+      Cartão válido
+
+  - name: mastercard_5555555555554444_valido
+    stdin: |
+      5555555555554444
+    expected_stdout: |
+      Cartão válido
+
+  - name: mastercard_5105105105105100_valido
+    stdin: |
+      5105105105105100
+    expected_stdout: |
+      Cartão válido
+
+  - name: amex_378282246310005_valido
+    stdin: |
+      378282246310005
+    expected_stdout: |
+      Cartão válido
+
+  - name: discover_6011111111111117_valido
+    stdin: |
+      6011111111111117
+    expected_stdout: |
+      Cartão válido
+
+  - name: visa_4222222222222_valido
+    stdin: |
+      4222222222222
+    expected_stdout: |
+      Cartão válido
+
+  - name: invalido_alterando_ultimo_digito
+    stdin: |
+      4111111111111112
+    expected_stdout: |
+      Cartão inválido
+
+  - name: invalid2
+    stdin: |
+      4012888888881882
+    expected_stdout: |
+      Cartão inválido
