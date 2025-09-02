@@ -1,0 +1,24 @@
+cartao = input()
+pares = 0
+impares = 0 
+n_cartao = cartao[::-1]
+
+for i, digito in enumerate(n_cartao):
+    if i % 2 == 0:
+        soma_impares = int(digito)
+        impares += soma_impares
+        print(impares)
+        
+for i, digito in enumerate(n_cartao):
+    if i % 2 == 1:
+        sd_pares = int(digito) * 2 
+        if 10 <= sd_pares <= 18:
+            sd_pares = sum(int(d) for d in str(sd_pares))
+        pares += sd_pares   # <-- agora dentro do if
+
+conferir = pares + impares 
+print(conferir)
+if conferir % 10 == 0:
+    print("Cartão válido")
+else:
+    print ("Cartão inválido")
