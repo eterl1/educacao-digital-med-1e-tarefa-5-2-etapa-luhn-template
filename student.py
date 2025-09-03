@@ -1,25 +1,25 @@
-cartao = input().strip()
+cartao = input()
+pares = 0
+impares = 0 
+n_cartao = cartao[::-1]
 
-# transforma cada dígito em inteiro dentro de uma lista
-digitos = [int(d) for d in cartao]
-
-# soma dos dígitos nas posições ímpares (da direita, de 2 em 2)
-impares = sum(digitos[-1::-2])
-
-# para os pares (da direita, também de 2 em 2)
-pares = []
-for d in digitos[-2::-2]:
-    dobro = d * 2
-    if dobro < 10:
-        pares.append(dobro)
-    else:
-        pares.append(dobro - 9)  # equivalente a "dobro - 10 + 1"
+for i, digito in enumerate(n_cartao):
+    if i % 2 == 0:
+        soma_impares = int(digito)
+        impares += soma_impares
+        print(impares)
         
-# soma total
-total = impares + sum(pares)
+for i, digito in enumerate(n_cartao):
+    if i % 2 == 1:
+         sd_pares = int(digito) * 2 
+        if 10 <= sd_pares <= 18:
+            sd_pares = sum(int(d) for d in str(sd_pares))
+        pares += sd_pares   # <-- agora dentro do if
 
-# validação
-if total % 10 == 0:
+conferir = pares + impares 
+print(conferir)
+if conferir % 10 == 0:
     print("Cartão válido")
 else:
+    print ("Cartão inválido")
     print("Cartão inválido")
